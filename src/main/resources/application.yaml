@@ -5,6 +5,10 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/"
 
+#We need to tell our gateway server, please connect with discovery server(Eureka server)
+# levarage the information present there(all details about the microservices)
+# to forward all the requests that are coming from external clients. To provide the same
+#information we need to add cloud property here under spring
   cloud:
     gateway:
       discovery:
@@ -30,4 +34,4 @@ info:
   app:
     name: "gatewayserver"
     description: "blah blah api-gateway application"
-    version: "1.6"
+    version: "1.0"
